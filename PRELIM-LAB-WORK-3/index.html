@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PrelimLabWork3</title>
+</head>
+<body>
+  <script>
+    // Browser-based version using prompt() and alert()
+    let attendance = parseInt(prompt("Enter number of attendances: "));
+    let lab1 = parseFloat(prompt("Enter Lab Work 1 grade: "));
+    let lab2 = parseFloat(prompt("Enter Lab Work 2 grade: "));
+    let lab3 = parseFloat(prompt("Enter Lab Work 3 grade: "));
+
+    // Computations
+    let labAverage = (lab1 + lab2 + lab3) / 3.0;
+    let classStanding = (attendance * 0.2) + (labAverage * 0.8);
+
+    let requiredPassing = 75 - classStanding;
+    let requiredExcellent = 100 - classStanding;
+
+    // Output
+    let report = "===== Student Standing Report =====\n" +
+                 "Attendance Score: " + attendance + "\n" +
+                 "Lab Work 1: " + lab1 + "\n" +
+                 "Lab Work 2: " + lab2 + "\n" +
+                 "Lab Work 3: " + lab3 + "\n" +
+                 "Lab Work Average: " + labAverage + "\n" +
+                 "Class Standing: " + classStanding + "\n" +
+                 "Required Prelim Exam Score to Pass (75): " + requiredPassing + "\n" +
+                 "Required Prelim Exam Score to be Excellent (100): " + requiredExcellent + "\n";
+
+    if (classStanding >= 75) {
+      report += "Remarks: You are already passing based on class standing.";
+    } else {
+      report += "Remarks: You need to perform well in the Prelim Exam to pass.";
+    }
+
+    alert(report);
+  </script>
+</body>
+</html>
